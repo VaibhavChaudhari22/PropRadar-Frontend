@@ -1,0 +1,41 @@
+.nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid var(--cream-border);
+  padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+  z-index: 100;
+  justify-content: space-around;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 20px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: color var(--transition);
+}
+
+.item.active {
+  color: var(--navy);
+}
+
+.add {
+  color: var(--gold);
+}
+
+.add.active {
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .nav { display: flex; }
+}

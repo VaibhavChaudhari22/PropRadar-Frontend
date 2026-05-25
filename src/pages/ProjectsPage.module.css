@@ -1,0 +1,45 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+
+.pages {
+  display: flex;
+  gap: 4px;
+}
+
+.pageBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text-secondary);
+  background: white;
+  border: 1px solid var(--cream-border);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.pageBtn:hover {
+  background: var(--cream);
+  color: var(--text-primary);
+}
+
+.pageBtn.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+  font-weight: 500;
+}

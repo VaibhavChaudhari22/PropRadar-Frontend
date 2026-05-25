@@ -1,0 +1,235 @@
+.formLayout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
+}
+
+.formCol {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: 20px;
+}
+
+/* Section */
+.section {
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  border-bottom: 1px solid var(--cream-border);
+}
+.sectionHeader:hover { color: var(--text-primary); }
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sectionBody {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Grid layouts */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+
+/* Variants */
+.variantBlock {
+  background: var(--cream);
+  border: 1px solid var(--cream-border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.variantTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.carpetRows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.carpetHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 36px;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 0 2px;
+}
+
+.carpetRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 36px;
+  gap: 8px;
+  align-items: center;
+}
+
+.addVariantBtn {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+/* Upload */
+.uploadCard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.existingImgs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.imgThumb {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  aspect-ratio: 1;
+  position: relative;
+  border: 1px solid var(--cream-border);
+  background: var(--cream-dark);
+}
+
+.imgThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.newThumb {
+  border-color: var(--navy-light);
+}
+
+.removeImg {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.removeImg:hover { background: var(--coral); }
+
+.uploadZone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 16px;
+  border: 1.5px dashed var(--cream-border);
+  border-radius: var(--radius-md);
+  background: var(--cream);
+  cursor: pointer;
+  transition: all var(--transition);
+  width: 100%;
+}
+
+.uploadZone:hover {
+  border-color: var(--navy-light);
+  background: #F0F4FF;
+}
+
+.uploadText {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.uploadSub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Submit */
+.submitCard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.submitHint {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .formLayout { grid-template-columns: 1fr; }
+  .sideCol { position: static; }
+  .grid3 { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 540px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .grid3 { grid-template-columns: 1fr; }
+  .carpetRow { grid-template-columns: 1fr 1fr 36px; }
+}
+
+@media (max-width: 768px) {
+  .submitCard {
+    position: fixed;
+    bottom: 60px;
+    /* above the bottom nav */
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    border-top: 1px solid var(--cream-border);
+    z-index: 50;
+  }
+}
