@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: process.env.BASE_URL,  // ← add /projects here
+  baseURL: import.meta.env.VITE_API_URL,  // ← add /projects here
   timeout: 15000,
 })
 
